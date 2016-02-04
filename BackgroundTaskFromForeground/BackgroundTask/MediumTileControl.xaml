@@ -1,0 +1,18 @@
+﻿<UserControl
+    x:Class="BackgroundTask.MediumTileControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BackgroundTask"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="_self">
+
+    <Viewbox Width="{Binding Width, ElementName=_self}" Height="{Binding Height, ElementName=_self}">
+        <Grid Width="150" Height="150">
+            <Border Background="{Binding BackgroundColor, ElementName=_self}" >
+                <TextBlock Text="{Binding Message, ElementName=_self}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="WrapWholeWords" FontSize="{StaticResource TextStyleExtraLargeFontSize}" TextAlignment="Center" FontWeight="Bold" Foreground="White" />
+            </Border>
+        </Grid>
+    </Viewbox>
+</UserControl>
