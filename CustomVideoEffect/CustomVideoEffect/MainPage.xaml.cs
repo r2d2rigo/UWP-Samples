@@ -1,6 +1,7 @@
 ﻿using CustomVideoEffect.VideoEffects;
 using System;
 using Windows.ApplicationModel;
+using Windows.Media.Core;
 using Windows.Media.Editing;
 using Windows.Media.Effects;
 using Windows.UI.Xaml;
@@ -28,8 +29,12 @@ namespace CustomVideoEffect
             MediaComposition compositor = new MediaComposition();
             compositor.Clips.Add(clip);
 
+            VideoPlayer.SetMediaPlayer(new Windows.Media.Playback.MediaPlayer());//otherwise it's null
+
             // Set the stream source to the MediaElement control
-            this.VideoPlayer.SetMediaStreamSource(compositor.GenerateMediaStreamSource());
+            this.VideoPlayer.MediaPlayer.Source = MediaSource.CreateFromIMediaSource(compositor.GenerateMediaStreamSource()) ;
         }
+
+     
     }
 }

@@ -8,6 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <MediaElement x:Name="VideoPlayer" Loaded="VideoPlayer_Loaded" AreTransportControlsEnabled="True" />
+        <MediaPlayerElement x:Name="VideoPlayer" Loaded="VideoPlayer_Loaded" AreTransportControlsEnabled="True" />
     </Grid>
 </Page>
